@@ -1,0 +1,71 @@
+var onClickEditButton = document.querySelector('.EditPageButton');
+onClickEditButton.addEventListener('click', isClicked);
+
+function isClicked(event){
+    var menuWrapper = document.querySelector('.EditPeopleWrapper');
+    var isClickedEditButton = document.querySelector('.EditPageButton');
+    menuWrapper.classList.toggle('EditPeopleWrapper--expanded');
+    onClickEditButton.classList.toggle('EditPageButton--active');
+}   
+
+var ClickAddButton = document.getElementById('AddOnePerson');
+ClickAddButton.addEventListener('click', hideText);
+ClickAddButton.addEventListener('click', addPersonCard);ClickAddButton.addEventListener('click', addPersonImage);
+ClickAddButton.addEventListener('click', addPersonName);ClickAddButton.addEventListener('click', addPersonJobTitle);
+ClickAddButton.addEventListener('click', addPersonEmail);
+ClickAddButton.addEventListener('click', addPersonPhoneNumber);
+
+function hideText(event){
+    var a = document.querySelector('.PeopleCardsContainer');
+    a.innerHTML = "";
+}
+
+function addPersonCard(event){
+    var a = document.querySelector('.PeopleCardWrapper');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('PersonCard');
+    
+}
+
+function addPersonImage(event){
+    var a = document.querySelector('.PersonCard');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('PersonImage');
+}
+
+function addPersonName(event){
+    var a = document.querySelector('.PersonCard');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('PersonName');
+}
+
+function addPersonJobTitle(event){
+    var a = document.querySelector('.PersonCard');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('PersonJobTitle');
+}
+
+function addPersonEmail(event){
+    var a = document.querySelector('.PersonCard');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('eMail');
+}
+
+function addPersonPhoneNumber(event){
+    var a = document.querySelector('.PersonCard');
+    let b = document.createElement('div');
+    a.appendChild(b);
+    b.classList.add('PersonPhoneNumber');
+}
+
+function selectCard(){
+    var allSelected = document.querySelectorAll('.PeopleCardWrapper > .PersonCard');
+    for(var i = 0; i < allSelected.length; i++){
+        allSelected[i].classList.toggle('PersonCard--active');
+    }
+}
